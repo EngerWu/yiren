@@ -1,0 +1,58 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+	<servlet>
+		<servlet-name>LoadFilePro</servlet-name>
+		<servlet-class>com.yiren.platform.http.LoadFilePro</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+  <servlet>
+  	<servlet-name>Trajectory</servlet-name>
+  	<display-name>Trajectory</display-name>
+  	<description>轨迹接收</description>
+  	<servlet-class>com.yiren.platform.http.Trajectory</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Picture</servlet-name>
+  	<display-name>Picture</display-name>
+  	<description>图像采集</description>
+  	<servlet-class>com.yiren.platform.http.Picture</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>RevCommand</servlet-name>
+  	<display-name>RevCommand</display-name>
+  	<description>接收指令</description>
+  	<servlet-class>com.yiren.platform.http.RevCommand</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>TestTrajectory</servlet-name>
+  	<display-name>TestTrajectory</display-name>
+  	<description>轨迹测试</description>
+  	<servlet-class>com.yiren.platform.test.TestTrajectory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Trajectory</servlet-name>
+  	<url-pattern>/api/geo_notify</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Picture</servlet-name>
+  	<url-pattern>/api/pic_cmd_recv</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RevCommand</servlet-name>
+  	<url-pattern>/api/pic_cmd</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>TestTrajectory</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+<!-- 
+  <servlet-mapping>
+  	<servlet-name>LoadFilePro</servlet-name>
+  	<url-pattern>/LoadFilePro</url-pattern>
+  </servlet-mapping>
+   -->
+</web-app>
